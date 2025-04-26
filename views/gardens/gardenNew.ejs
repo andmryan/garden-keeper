@@ -1,0 +1,31 @@
+<body>
+    <h1>Start tracking a new garden.</h1>
+    <form action="/gardenIndex" method="POST">
+        <div>    
+            <!-- Garden Name -->
+             <input type="text" name="name" id="name" placeholder="Name"/></input>
+        </div>
+        <div>
+            <!-- Garden Location -->
+             <select id="location" name="location"/>
+             <option value="indoor">Indoor</option>
+             <option value="outdoor">Outdoor</option>
+            </select>
+        </div>
+        <div>
+            <!-- Garden Description -->
+             <textarea name="description" id="description"
+             placeholder="Write a little bit about your garden! Is it new or old? Do you take care of it alone or with others? You can fill out as much or as little information as you'd like."
+             /></textarea>
+        </div>
+        <div>
+            <!-- Garden image URL -->
+             <input type="text" name="image" id="image" placeholder="Image URL"/></input>
+        </div>
+        <div>
+            <!-- Cancel/Submit -->
+            <a href="/views/gardens/gardenIndex.ejs">Cancel</a>
+             <button type="submit">Add Garden</button>
+        </div>
+    </form>
+  </body>

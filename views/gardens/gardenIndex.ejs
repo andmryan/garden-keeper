@@ -1,6 +1,15 @@
-<%- include("../partials/header") %>
+<%- include("../partials/_header") %>
 <body>
   <%- include("../partials/_navbar.ejs") %>
     <h1>Welcome to your gardens, <%= user.username %>!</h1>
+    <ul>
+      <% gardens.forEach((garden)=>{ %>
+      <li>
+        <a href="/gardens/<%= user._id %>/<%= garden._id %>">
+          <%= garden.name %>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
 </body>
 <%- include("../partials/footer") %>

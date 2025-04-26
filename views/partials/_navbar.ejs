@@ -2,6 +2,7 @@
     <a href="/">Home</a>
     <% if(user) { %>
     <a href="/gardens/<%=user._id%>">Your Gardens</a>
+    <a href="/gardens/<%=user._id%>/newGarden">New Garden</a>
     <a href="/auth/sign-out">Sign Out</a>
     <input type="text" placeholder="Search..">
     <% } else { %>

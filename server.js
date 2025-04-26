@@ -11,6 +11,8 @@ const session = require("express-session");
 const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 
+const User = require("./models/user.js");
+
 const authController = require("./controllers/auth.js");
 const gardenController = require("./controllers/garden.js");
 const plantController = require("./controllers/plant.js");
@@ -25,6 +27,7 @@ mongoose.connection.on("connected", () => {
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
+app.use(morgan("dev"));
 
 app.use(
     session({
@@ -34,13 +37,17 @@ app.use(
     })
 );
   
+app.use(passUserToView);
+
+// If they're logged in, send them to their gardens page instead of the front page, otherwise send them to the homepage.
 app.get("/", (req, res) => {
-    res.render("homepage.ejs", {
-      user: req.session.user,
-    });
+  if (req.session.user) {
+    res.redirect(`/gardens/${req.session.user._id}`);
+  } else {
+    res.render("homepage.ejs");
+  }
 });
 
-app.use(passUserToView);
 app.use("/auth", authController);
 app.use(isSignedIn);
 app.use("/gardens", gardenController);
