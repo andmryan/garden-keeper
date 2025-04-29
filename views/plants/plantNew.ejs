@@ -1,0 +1,52 @@
+<%- include("../partials/_header") %>
+<body>
+    <h1>Start tracking a new garden.</h1>
+    <form action="/plants/<%= user._id %>" method="POST">
+        <div>    
+            <!-- Plant name, garden name, + Owner -->
+             <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
+             <input type="text" name="species" id="species" placeholder="Species"/></input>
+             <input type="text" name="nickname" id="nickname" placeholder="Nickname"/></input>
+        </div>
+        <div>
+            <!-- Plant image URL -->
+             <input type="text" name="imageURL" id="imageURL" placeholder="Image URL"/></input>
+        </div>
+        <div>
+            <!-- Plant Description -->
+             <textarea name="description" id="description"
+             placeholder="Who's this new friend? Or maybe an old friend? Say a little about this new addition"!
+             /></textarea>
+        </div>
+        <div>
+            <!-- Plant Care -->
+             <select id="needsPrune" name="needsPrune"/>
+             <option value="none" selected disabled hidden>Pruned?</option>
+             <option value="yes">Yes</option>
+             <option value="no">No</option>
+             <option value="notApplicable">Not Applicable</option>
+            </select>
+        </div>
+        <div>
+             <select id="needsWater" name="needsWater"/>
+             <option value="none" selected disabled hidden>Watered?</option>
+             <option value="yes">Yes</option>
+             <option value="no">No</option>
+             <option value="notApplicable">Not Applicable</option>
+            </select>
+        </div>
+        <div>
+             <select id="needsFertilizer" name="needsFertilizer"/>
+             <option value="none" selected disabled hidden>Fertilized?</option>
+             <option value="yes">Yes</option>
+             <option value="no">No</option>
+             <option value="notApplicable">Not Applicable</option>
+            </select>
+        </div>
+        <div>
+            <!-- Submit -->
+             <button type="submit">Add Plant!</button>
+        </div>
+    </form>
+  </body>
+<%- include("../partials/footer") %>

@@ -2,10 +2,10 @@
 <body>
     <h1>Welcome to your gardens, <%= user.username %>!</h1>
     <ul>
-      <% gardens.forEach((garden)=>{ %>
+      <% plants.forEach((plant)=>{ %>
       <li>
-        <a href="/gardens/<%= user._id %>/<%= garden._id %>">
-          <%= garden.name %>
+        <a href="/plants/<%= user._id %>/<%= plant._id %>">
+          <%= plant.nickname %>
         </a>
       </li>
       <% }) %>

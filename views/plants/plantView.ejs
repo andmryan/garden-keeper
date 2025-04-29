@@ -1,6 +1,18 @@
 <%- include("../partials/_header") %>
 <body>
-  <%- include("../partials/_navbar.ejs") %>
-    <h1>Welcome to your plant, <%= user.username %>!</h1>
+    <h1><%= plant.nickname %> is so happy to see you, <%= user.username %>!</h1>
+    <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
+    <p>Description: <%= plant.description %></p>
+    <h3>Plant Care:</h3>
+    <>
+    <img src="<%= plant.imageURL %>">
+    <div id="navigation">
+    <form action="/plants/edit/<%= user._id %>/<%= plant.id%>">
+        <button type="submit">Edit <%= plant.name %></button>
+    </form>
+    <form action="/plants/<%= plant._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= plant.name %></button>
+    </form>
+</div>
 </body>
 <%- include("../partials/footer") %>

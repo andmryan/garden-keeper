@@ -1,0 +1,32 @@
+<%- include("../partials/_header") %>
+<body>
+    <h1>Start tracking a new garden.</h1>
+    <form action="/gardens/<%= user._id %>/<%= garden._id %>?_method=PUT" method="POST">
+        <div>    
+            <!-- Garden Name + Owner -->
+             <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
+             <input type="text" name="name" id="name" value="<%= garden.name %>"/></input>
+        </div>
+        <div>
+            <!-- Garden Location -->
+             <select id="location" name="location"/>
+                <option value="none" selected disabled hidden>Garden Location</option>
+                <option value="indoor">Indoor</option>
+                <option value="outdoor">Outdoor</option>
+            </select>
+        </div>
+        <div>
+            <!-- Garden Description -->
+             <textarea name="description" id="description"/><%= garden.description %></textarea>
+        </div>
+        <div>
+            <!-- Garden image URL -->
+             <input type="text" name="imageURL" id="imageURL" value="<%= garden.imageURL %>"/></input>
+        </div>
+        <div>
+            <!-- Cancel/Submit -->
+             <button type="submit">Commit Changes</button>
+        </div>
+    </form>
+  </body>
+  <%- include("../partials/footer") %>

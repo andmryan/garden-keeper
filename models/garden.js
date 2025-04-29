@@ -7,7 +7,7 @@ const gardenSchema = new mongoose.Schema({
     description: {type: String, required: true},
     location: {
         type: String,
-        enum: ["Indoor", "Outdoor"],
+        enum: ["indoor", "outdoor"],
         required: true,
     },
     imageURL: {type: String},

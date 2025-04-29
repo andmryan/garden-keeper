@@ -1,0 +1,17 @@
+<%- include("../partials/_header") %>
+<body>
+    <h1>About <%= garden.name %></h1>
+    <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
+    <h3>Location: <%= garden.location %></h3>
+    <p>Description: <%= garden.description %></p>
+    <img src="<%= garden.imageURL %>">
+    <div id="navigation">
+    <form action="/gardens/edit/<%= user._id %>/<%= garden.id%>">
+        <button type="submit">Edit <%= garden.name %></button>
+    </form>
+    <form action="/gardens/<%= garden._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= garden.name %></button>
+    </form>
+</div>
+</body>
+<%- include("../partials/footer") %>

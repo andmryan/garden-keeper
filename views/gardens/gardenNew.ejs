@@ -1,13 +1,16 @@
+<%- include("../partials/_header") %>
 <body>
     <h1>Start tracking a new garden.</h1>
-    <form action="/gardenIndex" method="POST">
+    <form action="/gardens/<%= user._id %>" method="POST">
         <div>    
-            <!-- Garden Name -->
+            <!-- Garden Name + Owner -->
+             <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
              <input type="text" name="name" id="name" placeholder="Name"/></input>
         </div>
         <div>
             <!-- Garden Location -->
              <select id="location" name="location"/>
+             <option value="none" selected disabled hidden>Garden Location</option>
              <option value="indoor">Indoor</option>
              <option value="outdoor">Outdoor</option>
             </select>
@@ -20,12 +23,12 @@
         </div>
         <div>
             <!-- Garden image URL -->
-             <input type="text" name="image" id="image" placeholder="Image URL"/></input>
+             <input type="text" name="imageURL" id="imageURL" placeholder="Image URL"/></input>
         </div>
         <div>
             <!-- Cancel/Submit -->
-            <a href="/views/gardens/gardenIndex.ejs">Cancel</a>
              <button type="submit">Add Garden</button>
         </div>
     </form>
   </body>
+<%- include("../partials/footer") %>

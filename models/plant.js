@@ -3,24 +3,24 @@ const { Schema } = mongoose;
 
 const plantSchema = new mongoose.Schema({
     owner: { type: Schema.Types.ObjectId, ref: "User" },
-    inGarden: { type: Schema.Types.ObjectId, ref: "Garden" },
-    scientificName: {type: String, required: true},
+    home: { type: Schema.Types.ObjectId, ref: "Garden" },
+    species: {type: String, required: true},
     nickname: {type: String},
-    description: {type: String, required: true},
+    description: {type: String},
     imageURL: {type: String},
     needsPrune: {
         type: String,
-        enum: ["Yes", "No", "notApplicable"],
+        enum: ["yes", "no", "notApplicable"],
         required: true,
     },
     needsWater: {
         type: String,
-        enum: ["Yes", "No", "notApplicable"],
+        enum: ["yes", "no", "notApplicable"],
         required: true,
     },
     needsFertilizer: {
         type: String,
-        enum: ["Yes", "No", "notApplicable"],
+        enum: ["yes", "no", "notApplicable"],
         required: true,
     },
 });
