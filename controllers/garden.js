@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Garden = require("../models/garden.js");
+const Plant = require("../models/plant.js");
 
 // GET Routes
 router.get("/:userId", async (req, res) => {
@@ -15,10 +16,18 @@ router.get("/:userId/newgarden", async (req, res) => {
     res.render("gardens/gardenNew.ejs", );
 });
 
+router.get("/:userId/:gardenId/newplant", async (req, res) => {
+    // get the garden the plant is from
+    const housedIn = await Garden.findById(req.params.gardenId);
+    // show the new plant form
+    res.render("plants/plantNew.ejs", { home : housedIn, garden : housedIn });
+});
+
 router.get("/:userId/:gardenId", async (req, res) => {
     // show a specific garden from their id
     const requestedGarden = await Garden.findById(req.params.gardenId);
-    res.render("gardens/gardenView.ejs", { garden : requestedGarden });
+    const housedPlants = await Plant.find({ home: req.params.requestedGarden });
+    res.render("gardens/gardenView.ejs", { garden : requestedGarden, plants : housedPlants });
 });
 
 router.get("/edit/:userId/:gardenId", async (req, res) => {
@@ -53,6 +62,15 @@ router.post("/:userId", async (req, res) => {
     await Garden.create(req.body);
         // redirect to the user's garden index
     res.redirect(`/gardens/${req.session.user._id}`);
+});
+
+router.post("/:userId/:gardenId/plants", async (req, res) => {
+    // Get the garden you're in.
+    const requestedGarden = await Garden.findById(req.params.gardenId);
+    // Turn the filled new plant form into a const
+    await Plant.create(req.body);
+    // render the garden page again, this time with the new plant in it.
+    res.render("/gardens/gardenView.ejs", { garden : requestedGarden })
 });
 
 // To Do: Add a route for /:gardenId for the use case of another user looking at someone else's plant.

@@ -1,5 +1,6 @@
 <%- include("../partials/_header") %>
 <body>
+    <div>
     <h1>About <%= garden.name %></h1>
     <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
     <h3>Location: <%= garden.location %></h3>
@@ -12,6 +13,20 @@
     <form action="/gardens/<%= garden._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= garden.name %></button>
     </form>
-</div>
+    <a href="/gardens/<%=user._id%>/<%= garden._id %>/newplant">Add a plant to this garden.</a>
+    <div>
+        <h1>Plants living in <%= garden.name %></h1>
+        <ul>
+            <% plants.forEach((plant)=>{ %>
+                <li>
+                    <a href="/gardens/<%= user._id %>/<%= plant._id %>">
+                      <%= plant.nickname %>
+                    </a>
+                  </li>
+                  <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 <%- include("../partials/footer") %>

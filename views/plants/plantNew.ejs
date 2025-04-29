@@ -1,10 +1,11 @@
 <%- include("../partials/_header") %>
 <body>
-    <h1>Start tracking a new garden.</h1>
-    <form action="/plants/<%= user._id %>" method="POST">
+    <h1>Add a new plant to <%= garden.name %>.</h1>
+    <form action="/gardens/<%= user._id %>/<%= garden._id %>/plants" method="POST">
         <div>    
             <!-- Plant name, garden name, + Owner -->
              <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
+             <input type="text" name="home" id="home" value="<%= garden.name %>" disabled></input>
              <input type="text" name="species" id="species" placeholder="Species"/></input>
              <input type="text" name="nickname" id="nickname" placeholder="Nickname"/></input>
         </div>

@@ -11,6 +11,7 @@ const gardenSchema = new mongoose.Schema({
         required: true,
     },
     imageURL: {type: String},
+    plantList: [{type: Schema.Types.ObjectId, ref: "Plant"}]
 });
 
 const Garden = mongoose.model("Garden", gardenSchema);
