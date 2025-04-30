@@ -1,0 +1,33 @@
+#header {
+    background-color: #728370;
+    overflow: hidden;
+    right: 0px;
+    top: 0px;
+    min-width: 350px;
+    align-self: flex-start;
+    padding: 30px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#navigation {
+    color:black;
+    background-color: #728370;
+    overflow: hidden;
+    margin-bottom: 10px;
+    min-width: 350px;
+    text-align: center;
+}
+
+#footer {
+    background-color: #728370;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    min-width: 350px;
+    align-self: flex-end;
+    padding: 20px;
+    margin-bottom: 0px;
+}

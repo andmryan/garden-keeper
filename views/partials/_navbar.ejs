@@ -1,10 +1,9 @@
-<nav>
+<nav id="navigation" name="navigation">
     <a href="/">Home</a>
     <% if(user) { %>
     <a href="/gardens/<%=user._id%>">Your Gardens</a>
     <a href="/gardens/<%=user._id%>/newgarden">New Garden</a>
     <a href="/auth/sign-out">Sign Out</a>
-    <input type="text" placeholder="Search..">
     <% } else { %>
     <a href="/auth/sign-in">Sign In</a>
     <a href="/auth/sign-up">Sign Up</a>

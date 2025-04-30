@@ -1,11 +1,11 @@
 <%- include("../partials/_header") %>
-    <div>
-    <h1>About <%= garden.name %></h1>
+    <div id="gardenView" name="gardenView">
+    <h2>About <%= garden.name %></h1>
     <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
     <p id="location" name="location">Location: <%= garden.location %></p>
     <p id="description" name="description">Description: <%= garden.description %></p>
     <img src="<%= garden.imageURL %>">
-    <div id="navigation">
+    <div id="viewNav">
     <form action="/gardens/edit/<%= user._id %>/<%= garden.id%>">
         <button type="submit">Edit <%= garden.name %></button>
     </form>
@@ -13,8 +13,8 @@
         <button type="submit">Delete <%= garden.name %></button>
     </form>
     <a href="/gardens/<%=user._id%>/<%= garden._id %>/newplant">Add a plant to this garden.</a>
-    <div>
-        <h1>Plants living in <%= garden.name %></h1>
+    <div id="gardenPlots" name="gardenPlots">
+        <h2>Plants living in <%= garden.name %></h1>
         <ul>
             <% plants.forEach((plant)=>{ %>
                 <li>

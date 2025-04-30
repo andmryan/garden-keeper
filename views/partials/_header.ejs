@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
-  </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Stylesheets/_Normalize.css">
     <link rel="stylesheet" href="/Stylesheets/header-footer.css">
     <link rel="stylesheet" href="/Stylesheets/body.css">
-    <title>
-        <% if (user) { %>
-            <%= user.username %>'s Garden Keeper
+    <div id="header" name="header">
+    <title>Garden Keeper</title>
+    <p>
+      <% if (user) { %>
+            Welcome to your gardens, <%= user.username %>.
       <% } else { %>
         Garden Keeper
-      <% } %></title>
+      <% } %>
+    </div>
+  </p>
+<%- include("../partials/_navbar.ejs") %>
 </head>
 <body>
-<%- include("../partials/_navbar.ejs") %>

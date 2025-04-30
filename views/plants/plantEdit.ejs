@@ -1,20 +1,22 @@
 <%- include("../partials/_header") %>
-    <h1>Edit <%= plant.nickname %>.</h1>
+<div io="plantDiv" name="plantDiv">
+    <h1>Editing <%= plant.nickname %>.</h1>
     <form action="/plants/<%= user._id %>/<%= plant._id %>/?_method=PUT" method="POST">
-        <div>    
+        <div id="nameBox" name="nameBox">    
             <!-- Plant name, garden name, + Owner -->
              <input type="text" name="species" id="species" value="<%= plant.species %>"></input>
              <input type="text" name="nickname" id="nickname" value="<%= plant.nickname %>"></input>
         </div>
-        <div>
+        <div id="plantImage" name="plantImage">
             <!-- Plant image URL -->
              <input type="text" name="imageURL" id="imageURL" placeholder="Image URL"/><%= plant.imageURL %></input>
         </div>
-        <div>
+        <div id="careBox" name="careBox">
+        <div id="plantDesc" name="plantDesc">
             <!-- Plant Description -->
              <textarea name="description" id="description"><%= plant.description %></textarea>
         </div>
-        <div>
+        <div id="plantPrune" name="plantPrune">
             <!-- Plant Care -->
              <select id="needsPrune" name="needsPrune"/>
              <option value="none" selected disabled hidden>Pruned?</option>
@@ -23,7 +25,7 @@
              <option value="notApplicable">Not Applicable</option>
             </select>
         </div>
-        <div>
+        <div id="plantWater" name="plantWater">
              <select id="needsWater" name="needsWater"/>
              <option value="none" selected disabled hidden>Watered?</option>
              <option value="yes">Yes</option>
@@ -31,7 +33,7 @@
              <option value="notApplicable">Not Applicable</option>
             </select>
         </div>
-        <div>
+        <div id="plantFertilizer" name="plantFertilizer">
              <select id="needsFertilizer" name="needsFertilizer"/>
              <option value="none" selected disabled hidden>Fertilized?</option>
              <option value="yes">Yes</option>
@@ -39,9 +41,11 @@
              <option value="notApplicable">Not Applicable</option>
             </select>
         </div>
-        <div>
+        <div id="submit" name="submit">
             <!-- Submit -->
              <button type="submit">Commit Changes</button>
         </div>
+        </div>
     </form>
+</div>
 <%- include("../partials/footer") %>

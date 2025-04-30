@@ -1,12 +1,44 @@
 body {
-    background-color: lightblue;
+    background-color: #b8c1b7;
+    text-align: justify;
 }
   
 h1 {
-    color: white;
     text-align: center;
+}
+
+h2 {
+    background-color: #728370;
+    text-align: center;
+    padding: 2px;
+}
+
+h4 {
+    text-align: center;
+    padding: 2px;
 }
   
 p {
     font-family: verdana;
+}
+
+
+#gardenView {
+    text-align: left;
+    padding: 10%;
+}
+
+#viewBox {
+    text-align: left;
+    padding: 10%;
+}
+
+#signIn {
+    align-self: center;
+    padding: 10%;
+}
+
+#signUp {
+    align-self: center;
+    padding: 10%;
 }

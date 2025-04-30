@@ -1,19 +1,22 @@
 <%- include("../partials/_header") %>
-    <h1><%= plant.nickname %></h1>
+<div class="flex-container" id="viewBox" name="plantView">
+    <h2><%= plant.nickname %></h2>
     <p name="owner" id="owner"> Owner: <%= user.username %></p>
     <p name="species" id="species"> Species: <%= plant.species %></p>
     <p id="description" name="description">Description: <%= plant.description %></p>
+    <div class="flex-container" id="careBox" name="careBox">
     <h4>Plant Care:</h4>
     <p id="plantCare" name="prune">Pruned? <%= plant.needsPrune %></p>
     <p id="plantCare" name="water">Watered? <%= plant.needsWater %></p>
     <p id="plantCare" name="fertilize">Fertilized? <%= plant.needsFertilizer %></p>
     <img src="<%= plant.imageURL %>">
-    <div id="navigation">
+    <div class="flex-container" name="viewNav" id="viewNav">
     <form action="/plants/edit/<%= user._id %>/<%= plant.id%>">
         <button type="submit">Edit <%= plant.name %></button>
     </form>
     <form action="/plants/<%= plant._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= plant.name %></button>
     </form>
+</div>
 </div>
 <%- include("../partials/footer") %>
