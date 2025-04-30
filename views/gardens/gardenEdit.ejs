@@ -1,5 +1,4 @@
 <%- include("../partials/_header") %>
-<body>
     <h1>Start tracking a new garden.</h1>
     <form action="/gardens/<%= user._id %>/<%= garden._id %>?_method=PUT" method="POST">
         <div>    
@@ -28,5 +27,4 @@
              <button type="submit">Commit Changes</button>
         </div>
     </form>
-  </body>
   <%- include("../partials/footer") %>

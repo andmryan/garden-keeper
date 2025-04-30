@@ -6,16 +6,15 @@
       @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
   </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/_Normalize.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/body.css">
-    <link rel="stylesheet" href="/css/extras.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/Stylesheets/_Normalize.css">
+    <link rel="stylesheet" href="/Stylesheets/header-footer.css">
+    <link rel="stylesheet" href="/Stylesheets/body.css">
     <title>
         <% if (user) { %>
             <%= user.username %>'s Garden Keeper
       <% } else { %>
         Garden Keeper
       <% } %></title>
-      <%- include("../partials/_navbar.ejs") %>
 </head>
+<body>
+<%- include("../partials/_navbar.ejs") %>

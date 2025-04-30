@@ -1,5 +1,4 @@
 <%- include("../partials/_header") %>
-<body>
     <h1>Welcome to your gardens, <%= user.username %>!</h1>
     <ul>
       <% gardens.forEach((garden)=>{ %>
@@ -10,5 +9,4 @@
       </li>
       <% }) %>
     </ul>
-</body>
 <%- include("../partials/footer") %>

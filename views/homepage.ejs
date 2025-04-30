@@ -1,9 +1,7 @@
 <%- include("./partials/_header") %>
-<body>
   <% if (user) { %>
     <h1>Welcome to Garden Keeper, <%= user.username %>!</h1>
   <% } else { %>
     <h1>Welcome to Garden Keeper, please sign-up to create or view gardens.</h1>
   <% } %>
-</body>
 <%- include("./partials/footer") %>
