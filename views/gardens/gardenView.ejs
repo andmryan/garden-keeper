@@ -3,8 +3,8 @@
     <div>
     <h1>About <%= garden.name %></h1>
     <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
-    <h3>Location: <%= garden.location %></h3>
-    <p>Description: <%= garden.description %></p>
+    <p id="location" name="location">Location: <%= garden.location %></p>
+    <p id="description" name="description">Description: <%= garden.description %></p>
     <img src="<%= garden.imageURL %>">
     <div id="navigation">
     <form action="/gardens/edit/<%= user._id %>/<%= garden.id%>">
@@ -19,7 +19,7 @@
         <ul>
             <% plants.forEach((plant)=>{ %>
                 <li>
-                    <a href="/gardens/<%= user._id %>/<%= plant._id %>">
+                    <a href="/plants/<%= user._id %>/<%= plant._id %>">
                       <%= plant.nickname %>
                     </a>
                   </li>

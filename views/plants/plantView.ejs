@@ -1,10 +1,13 @@
 <%- include("../partials/_header") %>
 <body>
-    <h1><%= plant.nickname %> is so happy to see you, <%= user.username %>!</h1>
-    <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
-    <p>Description: <%= plant.description %></p>
-    <h3>Plant Care:</h3>
-    <>
+    <h1><%= plant.nickname %></h1>
+    <p name="owner" id="owner"> Owner: <%= user.username %></p>
+    <p name="species" id="species"> Species: <%= plant.species %></p>
+    <p id="description" name="description">Description: <%= plant.description %></p>
+    <h4>Plant Care:</h4>
+    <p id="plantCare" name="prune">Pruned? <%= plant.needsPrune %></p>
+    <p id="plantCare" name="water">Watered? <%= plant.needsWater %></p>
+    <p id="plantCare" name="fertilize">Fertilized? <%= plant.needsFertilizer %></p>
     <img src="<%= plant.imageURL %>">
     <div id="navigation">
     <form action="/plants/edit/<%= user._id %>/<%= plant.id%>">

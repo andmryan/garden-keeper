@@ -3,8 +3,6 @@
     <% if(user) { %>
     <a href="/gardens/<%=user._id%>">Your Gardens</a>
     <a href="/gardens/<%=user._id%>/newgarden">New Garden</a>
-    <a href="/plants/<%=user._id%>">Your Plants</a>
-    <a href="/plants/<%=user._id%>/newplant">New Plant</a>
     <a href="/auth/sign-out">Sign Out</a>
     <input type="text" placeholder="Search..">
     <% } else { %>

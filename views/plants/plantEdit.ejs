@@ -1,0 +1,49 @@
+<%- include("../partials/_header") %>
+<body>
+    <h1>Edit <%= plant.nickname %>.</h1>
+    <form action="/plants/<%= user._id %>/<%= plant._id %>/?_method=PUT" method="POST">
+        <div>    
+            <!-- Plant name, garden name, + Owner -->
+             <input type="text" name="species" id="species" value="<%= plant.species %>"></input>
+             <input type="text" name="nickname" id="nickname" value="<%= plant.nickname %>"></input>
+        </div>
+        <div>
+            <!-- Plant image URL -->
+             <input type="text" name="imageURL" id="imageURL" placeholder="Image URL"/><%= plant.imageURL %></input>
+        </div>
+        <div>
+            <!-- Plant Description -->
+             <textarea name="description" id="description"><%= plant.description %></textarea>
+        </div>
+        <div>
+            <!-- Plant Care -->
+             <select id="needsPrune" name="needsPrune"/>
+             <option value="none" selected disabled hidden>Pruned?</option>
+             <option value="yes">Yes</option>
+             <option value="no">No</option>
+             <option value="notApplicable">Not Applicable</option>
+            </select>
+        </div>
+        <div>
+             <select id="needsWater" name="needsWater"/>
+             <option value="none" selected disabled hidden>Watered?</option>
+             <option value="yes">Yes</option>
+             <option value="no">No</option>
+             <option value="notApplicable">Not Applicable</option>
+            </select>
+        </div>
+        <div>
+             <select id="needsFertilizer" name="needsFertilizer"/>
+             <option value="none" selected disabled hidden>Fertilized?</option>
+             <option value="yes">Yes</option>
+             <option value="no">No</option>
+             <option value="notApplicable">Not Applicable</option>
+            </select>
+        </div>
+        <div>
+            <!-- Submit -->
+             <button type="submit">Commit Changes</button>
+        </div>
+    </form>
+  </body>
+<%- include("../partials/footer") %>

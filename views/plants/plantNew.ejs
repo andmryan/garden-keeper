@@ -3,15 +3,13 @@
     <h1>Add a new plant to <%= garden.name %>.</h1>
     <form action="/gardens/<%= user._id %>/<%= garden._id %>/plants" method="POST">
         <div>    
-            <!-- Plant name, garden name, + Owner -->
-             <input type="text" name="owner" id="owner" value="<%= user.username %>" disabled></input>
-             <input type="text" name="home" id="home" value="<%= garden.name %>" disabled></input>
-             <input type="text" name="species" id="species" placeholder="Species"/></input>
-             <input type="text" name="nickname" id="nickname" placeholder="Nickname"/></input>
+            <!-- Plant names -->
+             <input type="text" name="species" id="species" placeholder="Species"></input>
+             <input type="text" name="nickname" id="nickname" placeholder="Nickname"></input>
         </div>
         <div>
             <!-- Plant image URL -->
-             <input type="text" name="imageURL" id="imageURL" placeholder="Image URL"/></input>
+             <input type="text" name="imageURL" id="imageURL"></input>
         </div>
         <div>
             <!-- Plant Description -->
@@ -46,7 +44,7 @@
         </div>
         <div>
             <!-- Submit -->
-             <button type="submit">Add Plant!</button>
+            <button type="submit">Add Plant!</button>
         </div>
     </form>
   </body>
